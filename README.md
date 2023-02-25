@@ -4,3 +4,7 @@
 
 ### Reference
 - [인프런 실전! Querydsl 학습](https://www.inflearn.com/course/querydsl-%EC%8B%A4%EC%A0%84)
+
+# 공부 내용 정리
+
+- [Querydsl 기본 문법](docs/basic.md) 
