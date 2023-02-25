@@ -152,4 +152,35 @@ public class QuerydslBasicTest {
         assertThat(member6.getUsername()).isEqualTo("member6");
         assertThat(memberNull.getUsername()).isNull();
     }
+
+    @Test
+    public void paging1() {
+        List<Member> result = queryFactory
+                .selectFrom(member)
+                .orderBy(member.username.desc())
+                .offset(1) // 앞의 1개를 skip한다.
+                .limit(2) // 2개를 가져온다.
+                .fetch();
+
+        assertThat(result).hasSize(2);
+    }
+
+
+    @Test
+    public void paging2() {
+        QueryResults<Member> queryResults = queryFactory
+                .selectFrom(member)
+                .orderBy(member.username.desc())
+                .offset(1) // 앞의 1개를 skip한다.
+                .limit(2) // 2개를 가져온다.
+                .fetchResults();
+
+        // count 쿼리가 먼저 날아간다.
+        // 실무에서는 쿼리가 복잡할 때 count 쿼리를 분리해서 사용해야 할 때가 있다.
+
+        assertThat(queryResults.getTotal()).isEqualTo(4);
+        assertThat(queryResults.getLimit()).isEqualTo(2);
+        assertThat(queryResults.getOffset()).isEqualTo(1);
+        assertThat(queryResults.getResults()).hasSize(2);
+    }
 }
