@@ -64,7 +64,7 @@ class MemberJpaRepositoryTest {
         condition.setAgeLoe(40);
         condition.setTeamName("teamB");
 
-        List<MemberTeamDto> result = memberJpaRepository.searchByBuilder(condition);
+        List<MemberTeamDto> result = memberJpaRepository.search(condition);
 
         // 동적쿼리를 짤 때 주의할 점
         // 만약 조건이 하나도 없다면 findAll()을 한다.
