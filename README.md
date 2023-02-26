@@ -8,3 +8,5 @@
 # 공부 내용 정리
 
 - [Querydsl 기본 문법](docs/basic.md) 
+
+- [Querydsl 중급 문법](docs/advance.md) 
