@@ -12,7 +12,7 @@
 
 - tuple은 `com.querydsl.core` 내 클래스이기에 Repository 바깥인 Service나 Controller에 쓰는 것을 피하는게 좋다.
 
-# 프로젝션과 결과 반환 - DTO 조회
+## 프로젝션과 결과 반환 - DTO 조회
 
 ### 순수 JPA에서 DTO 조회 코드
 
