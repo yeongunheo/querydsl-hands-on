@@ -13,4 +13,6 @@
 
 - [실무 활용 - 순수 JPA와 Querydsl](docs/pratice-1.md)
 
-- [실무 활용 - 스프링 데이터 JPA와 Querydsl](docs/pratice-2.md) 
+- [실무 활용 - 스프링 데이터 JPA와 Querydsl](docs/pratice-2.md)
+
+- [스프링 데이터 JPA가 제공하는 Querydsl 기능](docs/pratice-3.md) 
