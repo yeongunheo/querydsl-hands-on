@@ -1,4 +1,4 @@
-## 프로젝션과 결과 반환 - 기본
+# 프로젝션과 결과 반환 - 기본
 
 ### 프로젝션이란?
 - SELECT 절에 어떤 것을 가져올 지 대상을 지정하는 것
@@ -12,7 +12,7 @@
 
 - tuple은 `com.querydsl.core` 내 클래스이기에 Repository 바깥인 Service나 Controller에 쓰는 것을 피하는게 좋다.
 
-## 프로젝션과 결과 반환 - DTO 조회
+# 프로젝션과 결과 반환 - DTO 조회
 
 ### 순수 JPA에서 DTO 조회 코드
 
@@ -44,7 +44,7 @@ List<MemberDto> result = em.createQuery("SELECT new study.querydsl.dto.MemberDto
 - `ExpressionsUtils.as(source, alias)` : 필드나 서브 쿼리에 별칭 적용
 - `username.as(”memberName”)` : 필드에 별칭 적용
 
-## 프로젝션과 결과 반환 - @QueryProjection
+# 프로젝션과 결과 반환 - @QueryProjection
 
 ### 생성자 + @QueryProjection
 
@@ -60,14 +60,14 @@ List<MemberDto> result = em.createQuery("SELECT new study.querydsl.dto.MemberDto
 
 ⇒ 따라서 생성자 방식을 추천한다.
 
-## 동적 쿼리 - BooleanBuilder 사용
+# 동적 쿼리 - BooleanBuilder 사용
 
 ### 동적 쿼리를 해결하는 두가지 방식
 
 - BooleanBuilder
 - Where 다중 파라미터 사용
 
-## 동적 쿼리 - Where 다중 파라미터 사용
+# 동적 쿼리 - Where 다중 파라미터 사용
 
 - where 조건에 null 값은 무시된다.
 - 메서드를 다른 쿼리에서도 재활용할 수 있다.
@@ -78,7 +78,7 @@ List<MemberDto> result = em.createQuery("SELECT new study.querydsl.dto.MemberDto
   > 광고 상태 isValid, 날짜가 IN일 경우:  
   조건들을 조합한 최종메서드: isServicable
 
-## 수정, 삭제 배치 쿼리
+# 수정, 삭제 벌크 연산
 
 - 쿼리 한번으로 대량 데이터 수정
 
@@ -86,6 +86,6 @@ List<MemberDto> result = em.createQuery("SELECT new study.querydsl.dto.MemberDto
 
 - 쿼리가 그즉시 바로 날라가기 때문에 DB 상태와 영속성 컨텍스트의 상태가 달라진다.
 
-## SQL function 호출하기
+# SQL function 호출하기
 
 SQL function은 JPA와 같이 Dialect에 등록된 내용만 호출할 수 있다.
