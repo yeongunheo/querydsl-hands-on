@@ -10,3 +10,5 @@
 - [Querydsl 기본 문법](docs/basic.md) 
 
 - [Querydsl 중급 문법](docs/advance.md) 
+
+- [실무 활용 - 순수 JPA와 Querydsl](docs/pratice-1.md) 
