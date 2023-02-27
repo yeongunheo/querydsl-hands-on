@@ -102,8 +102,7 @@ public class MemberRepositoryImpl extends QuerydslRepositorySupport implements M
         return new PageImpl<>(content, pageable, total);
     }
 
-    @Override
-    public Page<MemberTeamDto> searchPageSimple2(MemberSearchCondition condition, Pageable pageable) {
+    public List<MemberTeamDto> searchPageSimple2(MemberSearchCondition condition, Pageable pageable) {
 
         JPQLQuery<MemberTeamDto> jpqlQuery = from(member)
                 .leftJoin(member.team, team)
@@ -123,12 +122,7 @@ public class MemberRepositoryImpl extends QuerydslRepositorySupport implements M
         //offset, limit를 메서드 체인에서 뺄 수 있다.
         JPQLQuery<MemberTeamDto> query = getQuerydsl().applyPagination(pageable, jpqlQuery);
 
-        List<MemberTeamDto> resultList = query.fetch();
-
-        List<MemberTeamDto> content = results.getResults();
-        long total = results.getTotal();
-
-        return new PageImpl<>(content, pageable, total);
+        return query.fetch();
     }
 
     @Override
